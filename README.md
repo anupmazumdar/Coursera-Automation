@@ -41,15 +41,21 @@ Using this extension, complete Coursera courses within seconds. It can be used t
 | Skip Video+                          | 🟢 Working | [Watch Demo](https://youtu.be/3OZZ5n2eS8s)                                      |
 | Course Backup                        | 🟢 Working | [Watch Demo](https://youtu.be/KpmoToGLD-I)                                      |
 
-## Installation
+## Installation & Activation
 
-1. Clone or download the repository.
-2. Open the Chrome browser.
-3. Go to `chrome://extensions/`.
-4. Enable `Developer mode`.
-5. Click on `Load unpacked`.
-6. Select the downloaded folder.
-7. The extension will be added to the browser.
+1. **Download / Clone**:
+   ```bash
+   git clone https://github.com/anupmazumdar/Coursera-Automation.git
+   ```
+2. **Load in Chrome**:
+   - Open `chrome://extensions/` in Google Chrome / Brave.
+   - Turn ON **Developer mode** (top right corner).
+   - Click **Load unpacked** and select this repository folder.
+3. **Get Your Activation Key**:
+   - Click the extension icon in Chrome toolbar.
+   - You will see your unique **Device ID** with a **Request Key on Telegram** button.
+   - Click the button or message **[@automation_coursera](https://t.me/automation_coursera)** on Telegram with your Device ID to receive your activation key.
+   - Paste the code into the extension and click **⚡ Verify & Unlock**.
 
 ## How to use
 
