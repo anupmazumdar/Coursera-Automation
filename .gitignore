@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Private Author Source, Keys & Tools (DO NOT PUSH TO PUBLIC GITHUB)
+admin/
+src/
+tools/
+LICENSE_PROTECTION_GUIDE.md
+
+# Environment / System
+.DS_Store
+Thumbs.db
+*.log

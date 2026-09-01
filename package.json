@@ -1,0 +1,14 @@
+{
+  "name": "coursera-automation-extension",
+  "version": "3.6.7",
+  "description": "Coursera Automation Extension with Cryptographic Access Protection and Code Encryption",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/obfuscate.js",
+    "keygen": "node tools/generate-license.js",
+    "test": "node tools/test-extension-license.js"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^5.6.0"
+  }
+}

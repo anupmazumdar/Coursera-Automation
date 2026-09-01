@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings</title>
+  <link rel="stylesheet" href="ui/settings.css" />
+  <style>
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+    .input-group label {
+      font-weight: 600;
+      color: #fff;
+    }
+    .input-group input, .input-group select, .input-group textarea {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .helper-text {
+      font-size: 12px;
+      color: #888;
+      margin-top: 3px;
+    }
+    .helper-text a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .helper-text a:hover {
+      text-decoration: underline;
+    }
+    .provider-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .badge-openrouter { background: #6366f1; color: #fff; }
+    .badge-license { background: #00ff88; color: #000; }
+    .save-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary-color);
+      color: #000;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 10px;
+    }
+    .save-btn:hover {
+      background: #00e600;
+      transform: scale(1.01);
+    }
+    .danger-btn {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1px solid #ff4757;
+      color: #ff4757;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 10px;
+    }
+    .danger-btn:hover {
+      background: rgba(255, 71, 87, 0.1);
+    }
+    .status-msg {
+      margin-top: 10px;
+      text-align: center;
+      color: var(--primary-color);
+      font-size: 14px;
+      min-height: 20px;
+    }
+    .info-box {
+      background: #1e293b;
+      border-left: 4px solid var(--primary-color);
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+    .license-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+    .lic-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #21262d;
+      font-size: 13px;
+    }
+    .lic-row:last-child {
+      border-bottom: none;
+    }
+    .lic-label {
+      color: #8b949e;
+      font-weight: 500;
+    }
+    .lic-val {
+      color: #f0f6fc;
+      font-weight: 600;
+      font-family: monospace;
+    }
+    .lic-val.status-active {
+      color: #00ff88;
+    }
+    .lic-val.status-locked {
+      color: #ff4757;
+    }
+    .device-copy-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .mini-btn {
+      padding: 4px 8px;
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+    }
+    .mini-btn:hover {
+      background: #30363d;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Extension Settings</h1>
+    </header>
+
+    <div class="tabs">
+      <div class="tab active" data-tab="ai">AI Quiz Solver</div>
+      <div class="tab" data-tab="course">Course Backup</div>
+      <div class="tab" data-tab="additional">Additional</div>
+      <div class="tab" data-tab="license">🔒 License</div>
+    </div>
+
+    <!-- OpenRouter AI Quiz Solver Tab -->
+    <div id="ai" class="tab-content active">
+      <section>
+        <h3>OpenRouter AI Quiz Solver (Elite Models)</h3>
+        
+        <div class="info-box">
+          💡 <strong>Elite Model Intelligence:</strong> Select the best AI model for solving tough, complex university and graduate-level quiz questions. If your chosen model is busy or rate-limited, the extension will automatically fallback to the next top-tier model!
+        </div>
+
+        <!-- OpenRouter API Key -->
+        <div class="input-group">
+          <label for="openRouterKey">
+            OpenRouter API Key <span class="provider-badge badge-openrouter">Multi-Model Engine</span>
+          </label>
+          <input type="password" id="openRouterKey" placeholder="sk-or-v1-..." autocomplete="off" />
+          <span class="helper-text">Get your API key from <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai/keys</a> (Supports Claude 3.5 Sonnet, GPT-4o, DeepSeek R1, Llama 3.3 70B)</span>
+        </div>
+
+        <!-- Primary Model Choice -->
+        <div class="input-group">
+          <label for="openRouterModel">Primary AI Model (Tough Question Solvers)</label>
+          <select id="openRouterModel">
+            <optgroup label="🌐 Live Web-Search Grounded Models (Searches Real Coursera & Quizlet Answer Keys)">
+              <option value="perplexity/sonar-reasoning">Perplexity Sonar Reasoning (Live Web Search + Deep CoT Proofs)</option>
+              <option value="perplexity/sonar">Perplexity Sonar (Online Live Web Search Solver)</option>
+            </optgroup>
+            <optgroup label="🌟 Flagship Elite Reasoning Models">
+              <option value="anthropic/claude-3.5-sonnet">Claude 3.5 Sonnet (Anthropic - #1 Computer Science & Logic Solver)</option>
+              <option value="openai/gpt-4o">GPT-4o (OpenAI - Flagship University Exam Master)</option>
+              <option value="deepseek/deepseek-r1">DeepSeek R1 (Deep CoT Reasoning & Academic Proofs)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct">Meta Llama 3.3 70B (High Accuracy & Speed)</option>
+              <option value="google/gemini-2.0-flash-001">Google Gemini 2.0 Flash (Fast & Smart)</option>
+              <option value="qwen/qwen-2.5-72b-instruct">Qwen 2.5 72B (Math & Technical MCQs)</option>
+              <option value="openai/gpt-4o-mini">GPT-4o Mini (OpenAI - High Speed & Efficiency)</option>
+              <option value="deepseek/deepseek-chat">DeepSeek V3 (671B Parameters)</option>
+            </optgroup>
+            <optgroup label="🆓 Free Tier High-Capacity Models">
+              <option value="meta-llama/llama-3.3-70b-instruct:free">Meta Llama 3.3 70B (Free)</option>
+              <option value="deepseek/deepseek-r1:free">DeepSeek R1 (Free)</option>
+              <option value="google/gemini-2.0-flash-exp:free">Google Gemini 2.0 Flash (Free)</option>
+              <option value="qwen/qwen-2.5-72b-instruct:free">Qwen 2.5 72B (Free)</option>
+            </optgroup>
+            <optgroup label="⚙️ Custom Model">
+              <option value="custom">Custom OpenRouter Model Identifier...</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="input-group hidden" id="customModelGroup">
+          <label for="customModel">Custom OpenRouter Model Identifier</label>
+          <input type="text" id="customModel" placeholder="e.g. meta-llama/llama-3.1-405b-instruct" />
+        </div>
+
+        <div class="setting-item">
+          <label for="autoFallbackToggle">Auto-Switch to Backup Elite Model on Token/Rate Limit</label>
+          <input type="checkbox" id="autoFallbackToggle" checked />
+        </div>
+        <span class="helper-text">If your primary model returns HTTP 429 or is congested, automatically cascades through the backup elite model chain (Claude 3.5 ➔ GPT-4o ➔ Llama 3.3 ➔ DeepSeek R1).</span>
+      </section>
+
+      <button id="saveAiBtn" class="save-btn">💾 Save OpenRouter Settings</button>
+      <div id="aiStatus" class="status-msg"></div>
+    </div>
+
+    <!-- Course Backup Tab -->
+    <div id="course" class="tab-content">
+      <section>
+        <h3>Course Backup Settings</h3>
+        <div class="input-group">
+          <label for="concurrency">Concurrent Downloads</label>
+          <input type="number" id="concurrency" min="1" max="10" value="5" />
+        </div>
+
+        <div class="input-group">
+          <label for="quality">Video Quality</label>
+          <select id="quality">
+            <option value="720p">720p</option>
+            <option value="540p">540p</option>
+            <option value="360p">360p</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="subtitle">Subtitle Language</label>
+          <select id="subtitle"></select>
+        </div>
+      </section>
+
+      <button id="saveBtn" class="save-btn">💾 Save Backup Settings</button>
+      <div id="status" class="status-msg"></div>
+    </div>
+
+    <!-- Additional Tab -->
+    <div id="additional" class="tab-content">
+      <section>
+        <h3>Speech Settings</h3>
+        <div class="setting-item">
+          <label for="speechToggle">Enable Speech Guide</label>
+          <input type="checkbox" id="speechToggle" />
+        </div>
+      </section>
+
+      <section>
+        <h3>Automation Settings</h3>
+        <div class="setting-item">
+          <label for="autoVideoToggle">Auto Complete Video Lectures on Open</label>
+          <input type="checkbox" id="autoVideoToggle" checked />
+        </div>
+        <div class="setting-item">
+          <label for="autoReadingToggle">Auto Complete Reading Materials on Open</label>
+          <input type="checkbox" id="autoReadingToggle" checked />
+        </div>
+        <div class="setting-item">
+          <label for="autoQuizToggle">Auto Quiz Attempt on Open</label>
+          <input type="checkbox" id="autoQuizToggle" checked />
+        </div>
+        <div class="setting-item">
+          <label for="autoSubmitQuizToggle">Auto Submit Quiz</label>
+          <input type="checkbox" id="autoSubmitQuizToggle" />
+        </div>
+      </section>
+
+      <button id="saveAdditionalBtn" class="save-btn">💾 Save Automation Settings</button>
+      <div id="additionalStatus" class="status-msg"></div>
+    </div>
+
+    <!-- License & Activation Tab -->
+    <div id="license" class="tab-content">
+      <section>
+        <h3>License & Cryptographic Activation <span class="provider-badge badge-license">ECDSA P-256</span></h3>
+        
+        <div class="info-box">
+          🔐 <strong>Security & Access Protection:</strong> This extension is cryptographically secured. Every license code is digitally signed with an asymmetric master private key held exclusively by the author.
+        </div>
+
+        <div class="license-card">
+          <div class="lic-row">
+            <span class="lic-label">Your Device ID:</span>
+            <div class="device-copy-row">
+              <span id="settingsDeviceId" class="lic-val">Loading...</span>
+              <button id="settingsCopyIdBtn" class="mini-btn">Copy</button>
+            </div>
+          </div>
+          <div class="lic-row">
+            <span class="lic-label">Activation Status:</span>
+            <span id="settingsLicStatus" class="lic-val status-locked">Locked</span>
+          </div>
+          <div class="lic-row">
+            <span class="lic-label">License Tier:</span>
+            <span id="settingsLicTier" class="lic-val">None</span>
+          </div>
+          <div class="lic-row">
+            <span class="lic-label">Remaining Time:</span>
+            <span id="settingsLicDays" class="lic-val">-</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="settingsActivationCode">Enter / Update Activation Code</label>
+          <textarea id="settingsActivationCode" placeholder="Paste activation code (CAX-...)" rows="3" style="font-family: monospace; font-size: 12px; padding: 8px; border-radius: 8px; border: 1px solid #333; background: #1e1e1e; color: #fff;"></textarea>
+          <span class="helper-text">Provide your Device ID to the author to receive an activation key.</span>
+        </div>
+
+        <button id="settingsActivateBtn" class="save-btn">⚡ Apply Activation Code</button>
+        <button id="settingsDeactivateBtn" class="danger-btn hidden">Deactivate License on This Device</button>
+        <div id="settingsLicMsg" class="status-msg"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="scripts/license.js"></script>
+  <script src="scripts/settings.js"></script>
+</body>
+
+</html>

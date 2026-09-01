@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coursera Automation Extension</title>
+    <script src="scripts/license.js"></script>
+    <script src="scripts/popup.js"></script>
+    <link rel="stylesheet" href="ui/popup.css" />
+  </head>
+
+  <body>
+    <div id="courseraModel">
+      <!-- Top Settings Header Button -->
+      <button id="settingsBtn" class="settings-btn" title="Open Settings">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      </button>
+
+      <h1 id="courseraModelTitle">Coursera Automation</h1>
+
+      <!-- ================= 1. LOCKED VIEW ================= -->
+      <div id="activationLockView" class="lock-view">
+        <div class="lock-card">
+          <div class="lock-icon-wrapper">
+            <svg class="lock-shield-icon" viewBox="0 0 24 24" width="42" height="42" fill="none" stroke="#00ff88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          
+          <h2 class="lock-title">Access Locked</h2>
+          <p class="lock-subtitle">This extension is encrypted and requires a cryptographically signed activation key from the author.</p>
+
+          <div class="device-box">
+            <div class="device-label-row">
+              <span class="device-label">YOUR UNIQUE DEVICE ID</span>
+              <span id="copySuccessMsg" class="copy-success hidden">Copied!</span>
+            </div>
+            <div class="device-id-container">
+              <span id="deviceIdPill" class="device-id-text">Loading ID...</span>
+              <button id="copyDeviceIdBtn" class="copy-id-btn" title="Copy Device ID">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+            <div class="device-hint">Send this Device ID to the author to receive your unlock code.</div>
+          </div>
+
+          <div class="activation-input-group">
+            <label for="activationCodeInput" class="input-label">ACTIVATION CODE</label>
+            <textarea id="activationCodeInput" class="activation-textarea" placeholder="Paste activation code (CAX-...)" rows="3" spellcheck="false" autocomplete="off"></textarea>
+          </div>
+
+          <button id="unlockBtn" class="unlock-btn">
+            <span>⚡ Verify & Unlock Extension</span>
+          </button>
+
+          <div id="lockStatusMsg" class="lock-status-msg hidden"></div>
+        </div>
+      </div>
+
+      <!-- ================= 2. ACTIVATED MAIN VIEW ================= -->
+      <div id="activatedView" class="hidden">
+        <div id="courseraModelContent">
+          <!-- User Profile Header -->
+          <div id="userProfile" class="user-profile">
+            <div class="user-info">
+              <span id="userName" class="user-name">Coursera User</span>
+              <span id="userEmail" class="user-email"><span class="email-pill">Active Session</span></span>
+            </div>
+            <div id="proBadge" class="pro-badge">PRO ACTIVATED</div>
+          </div>
+
+          <!-- License Info Banner -->
+          <div id="licenseInfoBanner" class="license-info-card">
+            <div class="lic-status-row">
+              <span class="lic-badge">🔒 CRYPTO-VERIFIED</span>
+              <span id="licDaysBadge" class="lic-days">Lifetime</span>
+            </div>
+            <div class="lic-details-text">
+              <span id="licDeviceLabel">Device: Bound</span> • <span id="licTierLabel">Tier: PRO MAX</span>
+            </div>
+          </div>
+
+          <!-- Usage Statistics -->
+          <div id="usageStats" class="usage-stats">
+            <div class="stat-item">
+              <span class="stat-label">License Status</span>
+              <span id="remainingQuota" class="stat-value text-success">Active</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Days Remaining</span>
+              <span id="daysRemaining" class="stat-value">Lifetime</span>
+            </div>
+          </div>
+          
+          <div id="courseraModelGrid"></div>
+        </div>
+      </div>
+      
+      <footer id="footer">
+        <svg
+          stroke="#ffffff"
+          fill="#ffffff"
+          stroke-width="0"
+          viewBox="0 0 384 512"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M384 144c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 36.4 24.3 67.1 57.5 76.8-.6 16.1-4.2 28.5-11 36.9-15.4 19.2-49.3 22.4-85.2 25.7-28.2 2.6-57.4 5.4-81.3 16.9v-144c32.5-10.2 56-40.5 56-76.3 0-44.2-35.8-80-80-80S0 35.8 0 80c0 35.8 23.5 66.1 56 76.3v199.3C23.5 365.9 0 396.2 0 432c0 44.2 35.8 80 80 80s80-35.8 80-80c0-34-21.2-63.1-51.2-74.6 3.1-5.2 7.8-9.8 14.9-13.4 16.2-8.2 40.4-10.4 66.1-12.8 42.2-3.9 90-8.4 118.2-43.4 14-17.4 21.1-39.8 21.6-67.9 31.6-10.8 54.4-40.7 54.4-75.9zM80 64c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm0 384c-8.8 0-16-7.2-16-16s-7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm224-320c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16z"
+          ></path>
+        </svg>
+        <span id="author">Protected & Managed by Author</span>
+      </footer>
+    </div>
+  </body>
+</html>
