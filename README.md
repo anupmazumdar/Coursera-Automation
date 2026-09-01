@@ -98,18 +98,17 @@ Extension will automatically get the solutions and mark the correct options.
 
 If you find this extension helpful, consider supporting its development to keep it alive and growing! Every contribution makes a difference. ❤️
 
-- Donate via UPI: devjs@jio
-- [Sponsor me on GitHub](https://github.com/sponsors/sauravhathi)
-- [Buy me a coffee](https://www.buymeacoffee.com/sauravhathi)
-- [Donate via PayPal](https://paypal.me/sauravkumar680)
+- [Buy me a coffee](https://www.buymeacoffee.com/anupmazumdar)
+- [Sponsor me on GitHub](https://github.com/anupmazumdar)
+- [Telegram Support](https://t.me/automation_coursera)
 
 ## Author
 
-- Made by Saurav Hathi, Modified by Anup Mazumdar
+- Maintained & Protected by **Anup Mazumdar** ([@automation_coursera](https://t.me/automation_coursera))
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/sauravhathi/coursera-automation-extension/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/anupmazumdar/Coursera-Automation/blob/main/LICENSE) file for details.
 
 ---
 
