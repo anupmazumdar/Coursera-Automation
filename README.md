@@ -1,25 +1,33 @@
 # Coursera Automation Extension
 
-![Version](https://img.shields.io/badge/version-3.6.7-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Platform](https://img.shields.io/badge/platform-Chrome-blue)
+[![Version](https://img.shields.io/badge/version-3.6.7-00ff88?style=for-the-badge)](https://github.com/anupmazumdar/Coursera-Automation)
+[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Chrome%20%7C%20Edge%20%7C%20Brave-38bdf8?style=for-the-badge)](https://github.com/anupmazumdar/Coursera-Automation)
+[![Website](https://img.shields.io/badge/Official%20Website-Live-00e5ff?style=for-the-badge)](https://automation.anupmazumdar.me)
+[![Telegram](https://img.shields.io/badge/Telegram-@automation__coursera-229ed9?style=for-the-badge)](https://t.me/automation_coursera)
 
-Using this extension, complete Coursera courses within seconds. It can be used to complete lectures, dialogue, reading materials, ungraded plugins, discussions, shareable link and course backup.
+> 🚀 **Official Product Landing Page**: [https://automation.anupmazumdar.me](https://automation.anupmazumdar.me)
 
-`Disclaimer:` Quiz Automation provides AI-generated answers, which may not always be accurate.
+Complete Coursera courses, specializations, and certificates up to **10x faster**. Features intelligent AI quiz automation with feedback learning, Skip Video+ instant lecture skipping, reading material auto-completers, dialogue plugins, and 1-click full course backups.
+
+---
+
+## 🌐 Official Product Website & Live Simulator
+Visit our official landing page to experience the interactive course simulator, feature breakdown, and pricing tiers:
+👉 **[automation.anupmazumdar.me](https://automation.anupmazumdar.me)**
+
+---
 
 ## Table of Contents
 
-- [Demo](#demo)
-- [Features](#features-status)
-- [Installation](#installation)
-- [How to use](#how-to-use)
-- [Shareable Link](#shareable-link)
-- [Skip Video+](#skipvideoplus)
-- [Quiz Automation](#quiz-automation)
-- [Keyboard Shortcuts](#keyboard-shortcuts)
-- [Author](#author)
-- [License](#license)
+- [🌐 Official Website](#-official-product-website--live-simulator)
+- [✨ Key Features](#features-status)
+- [⚡ Installation & Activation](#installation--activation)
+- [🚀 How to Use](#how-to-use)
+- [📦 Feature Highlights](#skip-videoplus)
+- [💬 Contact & License Key](#contact--support)
+- [☕ Support the Developer](#support-the-developer)
+- [📄 License](#license)
 
 ## Demo
 

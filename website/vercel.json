@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/revocations.json",
+      "dest": "/revocations.json",
+      "headers": {
+        "cache-control": "no-cache, no-store, must-revalidate",
+        "access-control-allow-origin": "*"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
