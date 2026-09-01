@@ -5,6 +5,8 @@ node_modules/
 admin/
 src/
 tools/
+.agents/
+*.vault*
 website/keygen.html
 website/admin/
 LICENSE_PROTECTION_GUIDE.md
