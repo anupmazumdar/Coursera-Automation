@@ -102,6 +102,13 @@ Extension will automatically get the solutions and mark the correct options.
 - `Alt + W` or `Alt + B`: Toggle the Extension
 - `Alt + Z` or `Ctrl + Shift + Z`: Refresh the answers or Navigate to the next question(mark as correct)
 
+## Acknowledgments & Credits
+
+Special thanks and full credit to **[Saurav Hathi](https://github.com/sauravhathi)** for creating the original open-source base project [coursera-automation-extension](https://github.com/sauravhathi/coursera-automation-extension).
+
+- **Original Project & Creator**: [Saurav Hathi](https://github.com/sauravhathi) — [coursera-automation-extension](https://github.com/sauravhathi/coursera-automation-extension)
+- **Enhanced Edition & Security Architecture**: Maintained & Protected by **[Anup Mazumdar](https://github.com/anupmazumdar)** ([@automation_coursera](https://t.me/automation_coursera))
+
 ## Support the Developer
 
 If you find this extension helpful, consider supporting its development to keep it alive and growing! Every contribution makes a difference. ❤️
@@ -110,13 +117,9 @@ If you find this extension helpful, consider supporting its development to keep 
 - [Sponsor me on GitHub](https://github.com/anupmazumdar)
 - [Telegram Support](https://t.me/automation_coursera)
 
-## Author
-
-- Maintained & Protected by **Anup Mazumdar** ([@automation_coursera](https://t.me/automation_coursera))
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/anupmazumdar/Coursera-Automation/blob/main/LICENSE) file for details.
+This project is licensed under the MIT / Business Source License — see the [LICENSE](LICENSE) file for original licensing terms.
 
 ---
 
